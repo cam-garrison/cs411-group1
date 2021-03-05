@@ -1,0 +1,5 @@
+US 1.1: Login Fails
+
+- If the user enters incorrect login/password information they will be displayed the unsuccessful login page - it will prompt the user to try again or say “Forgot your password?”
+
+- This resets the user to the beginning of User Story 1. 
