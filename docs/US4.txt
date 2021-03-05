@@ -1,0 +1,16 @@
+US4: Receiving list of recommendations
+
+- As a user, I want to see the list of recommended gifts for my friend so that I can choose the best option.
+
+- After doing the ‘user log in story’, the ‘enter twitter story’ and the ‘enter friends info story’, the user will wait a few moments for the recommendation system to run. 
+
+- Then, the user will be presented with a list of recommended gifts to buy - listed in order from most highly recommended to buy for their friend to least recommended. 
+
+- These gifts will have an image of the gift, the name, price, a description, tags (outdoors, social, etc) as well as a hyperlink to the gift on amazon.
+
+- Each item will have a thumbs up / thumbs down icon, allowing the user to quickly give feedback on the item so the algorithm can make better recommendations  
+
+- In the event that we are unable to find gifts to recommend for the user’s friend, the system will output an error message stating “Oh no, we couldn’t find any gifts for your friend. Could you try again and enter more information about them?” 
+
+
+This is the final user story, it is where the user receives the end product of the software. 

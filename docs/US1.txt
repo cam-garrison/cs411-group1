@@ -1,0 +1,13 @@
+US1: Login into the app
+
+- As a user I want to login with my twitter account login information so that I am able to use an app to find the best gift for my friend.
+
+- The user will open the app to the login page and be asked to log in using their twitter account information.
+
+- Once they add their  information, either a successful login will occur which will lead to showing the app’s dashboard for that user, or an unsuccessful login will occur. 
+ -- The unsuccessful login page will prompt the user to try again or say “Forgot your password?”.
+
+- Once the user has logged in successfully, the dashboard is displayed. The dashboard will show that user’s past activity in the app (recent friend picks/gift suggestions) as well as current “Trending” gifts across the app to choose from.
+
+- There will also be a button to Start a New Friend Match, New Gift Match (for existing friend)  and Delete a Past Match.
+

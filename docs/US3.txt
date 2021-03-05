@@ -1,0 +1,11 @@
+US3 - Entering Friends Information
+
+- A user wants to give the app relevant information about their friend so the app will be able to choose the best gift.
+
+- Once logging in and selecting a friend, the user will be prompted to fill in a set of questions about their friend (favorite color, interests, gift price range, etc.)
+
+- These questions will have some answer suggestions in a “choose all that apply” format. If the user does not see the answer they want, there will be an “other” section in which they will be able to provide their own short answer. 
+
+- In order for the user to be successful, the user will need to fill in all the required fields, otherwise the application will send an error message and keep the user on the page until all required fields are filled in. If the user does not know the answer to a question, an “I’m not sure” option will be available. 
+
+- Once completed and filled in correctly, the application will move into the next step and display a waiting signal while the app looks for gift suggestions.
