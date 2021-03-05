@@ -6,6 +6,4 @@ US3 - Entering Friends Information
 
 - These questions will have some answer suggestions in a “choose all that apply” format. If the user does not see the answer they want, there will be an “other” section in which they will be able to provide their own short answer. 
 
-- In order for the user to be successful, the user will need to fill in all the required fields, otherwise the application will send an error message and keep the user on the page until all required fields are filled in. If the user does not know the answer to a question, an “I’m not sure” option will be available. 
-
 - Once completed and filled in correctly, the application will move into the next step and display a waiting signal while the app looks for gift suggestions.

@@ -1,0 +1,5 @@
+US4.1: Could not find recommendations.
+
+- In the event that we are unable to find gifts to recommend for the user’s friend, the system will output an error message stating “Oh no, we couldn’t find any gifts for your friend. Could you try again and enter more information about them?” 
+
+- This will reset the user to User Story 2.

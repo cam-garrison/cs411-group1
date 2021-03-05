@@ -1,0 +1,3 @@
+US 3.1 - Not all Fields were filled in.
+
+- In order for the user to be successful, the user will need to fill in all the required fields, otherwise the application will send an error message and keep the user on the page until all required fields are filled in. If the user does not know the answer to a question, an “I’m not sure” option will be available. 

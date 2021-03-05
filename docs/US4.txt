@@ -10,7 +10,5 @@ US4: Receiving list of recommendations
 
 - Each item will have a thumbs up / thumbs down icon, allowing the user to quickly give feedback on the item so the algorithm can make better recommendations  
 
-- In the event that we are unable to find gifts to recommend for the user’s friend, the system will output an error message stating “Oh no, we couldn’t find any gifts for your friend. Could you try again and enter more information about them?” 
-
 
 This is the final user story, it is where the user receives the end product of the software. 
