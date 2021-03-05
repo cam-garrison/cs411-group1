@@ -4,6 +4,4 @@ US2: Entering friend list through twitter:
 
 - The user can select a friend from their following list on twitter by their username or search for their username.
 
-- If the username is not found, does not have enough tweets and/or likes, or the account is private, the program will output which problem the inputted username has, and ask the user to input a new twitter profile.
-
-- If the inputted twitter username matches does not fail to meet these requirements, the user verifies that the selected twitter profile is correct and then the user moves on to User Story 3.
+- The user verifies that the selected twitter profile is correct and then the user moves on to User Story 3.

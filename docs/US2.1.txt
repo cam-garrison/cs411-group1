@@ -1,0 +1,7 @@
+US2.1: Account Inputted Doesn’t Work
+
+- In user story 2, the user has selected which twitter username they would like to use to match gifts to.
+
+- If the username is not found, does not have enough tweets and/or likes, or the account is private, the program will output which problem the inputted username has, and ask the user to input a new twitter profile.
+
+- This resets the user to the beginning of user story 2.

@@ -1,0 +1,5 @@
+US2.2: Selected Twitter Profile is Not Correct
+
+- In user story 2, the user has selected a valid twitter profile, but upon verification, realizes that it is not their friend’s profile.
+
+- When prompted, in the verification step, the user selects that this is not the correct profile, and is reset to the beginning of user story 2. 
