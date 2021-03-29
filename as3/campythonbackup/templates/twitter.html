@@ -8,14 +8,12 @@
 
 {% if tweets %}
 
-{% for tweet in tweets %}
-
 <li>
-    {{tweet}} <br>
-    <!--pass in a list of tweets, each only containing the text of said tweet. -->
+    Username = {{tweets['username']}} <br>
 </li>
-
-{% endfor %}
+<li> Account made at time/date = {{tweets['created_at']}} <br></li>
+<li>User ID = {{tweets['id']}} <br></li>
+<li>Twitter Description = {{tweets['description']}}</li>
 
 {% endif %}
 

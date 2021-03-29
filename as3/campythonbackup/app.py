@@ -13,6 +13,8 @@
 import flask
 from flask import Flask, Response, request, render_template, redirect, url_for
 from datetime import datetime
+from getuserinfo import run
+import json
 
 #for image uploading
 import os, base64
@@ -27,7 +29,12 @@ def twitter():
 	if flask.request.method == 'GET':
 		return render_template('twitter.html', message='Welecome to twittersearch')
 	else:
-		return render_template('twitter.html', message='Welecome to twittersearch')
+		if 'search' in request.form:
+			user = request.form.get('username')
+			ret = run(user)
+			loaded = json.loads(ret)
+			print(loaded["data"][0])
+			return render_template('twitter.html', message='Welecome to twittersearch, search for '+user, tweets=loaded["data"][0])
 
 
 if __name__ == "__main__":
