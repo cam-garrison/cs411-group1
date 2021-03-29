@@ -8,12 +8,26 @@
 
 {% if tweets %}
 
+<h4>User's info</h4>
+
 <li>
     Username = {{tweets['username']}} <br>
 </li>
 <li> Account made at time/date = {{tweets['created_at']}} <br></li>
 <li>User ID = {{tweets['id']}} <br></li>
 <li>Twitter Description = {{tweets['description']}}</li>
+
+{% endif %}
+
+{% if tweetlist %}
+
+<h4>{{tweets['username']}}'s recent tweets</h4>
+
+{% for tweet in tweetlist %}
+
+<li> {{tweet['text']}} </li> <br>
+
+{% endfor %}
 
 {% endif %}
 

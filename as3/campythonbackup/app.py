@@ -13,7 +13,8 @@
 import flask
 from flask import Flask, Response, request, render_template, redirect, url_for
 from datetime import datetime
-from getuserinfo import run
+from getuserinfo import main1
+from getusertweets import main2
 import json
 
 #for image uploading
@@ -31,10 +32,14 @@ def twitter():
 	else:
 		if 'search' in request.form:
 			user = request.form.get('username')
-			ret = run(user)
-			loaded = json.loads(ret)
-			print(loaded["data"][0])
-			return render_template('twitter.html', message='Welecome to twittersearch, search for '+user, tweets=loaded["data"][0])
+			f = main1(user)
+			loaded = json.loads(f)
+			uid = loaded['data'][0]['id']
+			print(uid)
+			tws = main2(uid)
+			loaded2 = json.loads(tws)
+			print(loaded2)
+			return render_template('twitter.html', message='Welecome to twittersearch, search for '+user, tweets=loaded['data'][0], tweetlist=loaded2['data'])
 
 
 if __name__ == "__main__":

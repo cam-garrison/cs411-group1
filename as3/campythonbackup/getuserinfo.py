@@ -1,82 +1,54 @@
-# taken directly from https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/User-Lookup/get_users_with_user_context.py
-from requests_oauthlib import OAuth1Session
+# taken directly from https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/User-Lookup/get_users_with_bearer_token.py
+import requests
 import os
 import json
 
-# In your terminal please set your environment variables by running the following lines of code.
-# export 'CONSUMER_KEY'='<your_consumer_key>'
-# export 'CONSUMER_SECRET'='<your_consumer_secret>'
-def run(user):
-    consumer_key = os.environ.get("CONSUMER_KEY")
-    consumer_secret = os.environ.get("CONSUMER_SECRET")
-    print(consumer_key, consumer_secret)
+# To set your enviornment variables in your terminal run the following line:
+# export 'BEARER_TOKEN'='<your_bearer_token>'
 
+
+def auth():
+    return os.environ.get("BEARER_TOKEN")
+
+
+def create_url(username):
+    # Specify the usernames that you want to lookup below
+    # You can enter up to 100 comma-separated values.
+    usernames = "usernames="+username
+    user_fields = "user.fields=created_at,description,id,name,username"
     # User fields are adjustable, options include:
     # created_at, description, entities, id, location, name,
     # pinned_tweet_id, profile_image_url, protected,
     # public_metrics, url, username, verified, and withheld
-    fields = "created_at,description"
-    username = user
-    params = {"usernames": user, "user.fields": fields}
+    url = "https://api.twitter.com/2/users/by?{}&{}".format(usernames, user_fields)
+    return url
 
 
-    # Get request token
-    request_token_url = "https://api.twitter.com/oauth/request_token"
-    oauth = OAuth1Session(consumer_key, client_secret=consumer_secret)
+def create_headers(bearer_token):
+    headers = {"Authorization": "Bearer {}".format(bearer_token)}
+    return headers
 
-    try:
-        fetch_response = oauth.fetch_request_token(request_token_url)
-    except ValueError:
-        print(
-            "There may have been an issue with the consumer_key or consumer_secret you entered."
-        )
 
-    resource_owner_key = fetch_response.get("oauth_token")
-    resource_owner_secret = fetch_response.get("oauth_token_secret")
-    print("Got OAuth token: %s" % resource_owner_key)
-
-    # # Get authorization
-    base_authorization_url = "https://api.twitter.com/oauth/authorize"
-    authorization_url = oauth.authorization_url(base_authorization_url)
-    print("Please go here and authorize: %s" % authorization_url)
-    verifier = input("Paste the PIN here: ")
-
-    # Get the access token
-    access_token_url = "https://api.twitter.com/oauth/access_token"
-    oauth = OAuth1Session(
-        consumer_key,
-        client_secret=consumer_secret,
-        resource_owner_key=resource_owner_key,
-        resource_owner_secret=resource_owner_secret,
-        verifier=verifier,
-    )
-    oauth_tokens = oauth.fetch_access_token(access_token_url)
-
-    access_token = oauth_tokens["oauth_token"]
-    access_token_secret = oauth_tokens["oauth_token_secret"]
-
-    # Make the request
-    oauth = OAuth1Session(
-        consumer_key,
-        client_secret=consumer_secret,
-        resource_owner_key=access_token,
-        resource_owner_secret=access_token_secret,
-    )
-
-    response = oauth.get(
-        "https://api.twitter.com/2/users/by", params=params
-    )
-
+def connect_to_endpoint(url, headers):
+    response = requests.request("GET", url, headers=headers)
+    print(response.status_code)
     if response.status_code != 200:
         raise Exception(
-            "Request returned an error: {} {}".format(response.status_code, response.text)
+            "Request returned an error: {} {}".format(
+                response.status_code, response.text
+            )
         )
+    return response.json()
 
-    print("Response code: {}".format(response.status_code))
 
-    
+def main1(username):
+    bearer_token = auth()
+    url = create_url(username)
+    headers = create_headers(bearer_token)
+    json_response = connect_to_endpoint(url, headers)
+    # print(json.dumps(json_response, indent=4, sort_keys=True))
+    return json.dumps(json_response, indent=4, sort_keys=True)
 
-    json_response = response.json()
 
-    print(json.dumps(json_response, indent=4, sort_keys=True))
-    return(json.dumps(json_response, indent=4, sort_keys=True))
+# if __name__ == "__main__":
+#     main(username)
