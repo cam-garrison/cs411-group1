@@ -1,0 +1,8 @@
+--AS3! 
+
+All code + video can be found in the prototype folder! It is a simple twitter search, displaying information about a user as well as some recent tweets.
+
+Technology stack used: Flask/jinja2 template + Python Backend
+
+We initially wanted to use a Node backend to do our API calls, however we had a hard time integrating that in our stack at this point, as we are all quite inexperienced with JS.
+There was good documentation on how to make twitter API calls provided by twitter in the repo linked in some of our backend code, and one of our members had recent expirience using Flask, so we decided to use this technology stack for simplicity.
