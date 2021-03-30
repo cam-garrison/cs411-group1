@@ -1,5 +1,5 @@
 # pulled from https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/User-Tweet-Timeline/user_tweets.py
-
+# modified to fit our needs.
 import requests
 import os
 import json

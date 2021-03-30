@@ -1,4 +1,5 @@
 # taken directly from https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/master/User-Lookup/get_users_with_bearer_token.py
+# modified to work for our purposes.
 import requests
 import os
 import json

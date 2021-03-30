@@ -1,14 +1,6 @@
 ######################################
-# author ben lawson <balawson@bu.edu>
-# Edited by: Craig Einstein <einstein@bu.edu>
-# Edited by: Cameron Garrison <cgarriso@bu.edu>
+# app for cs411 as3.
 ######################################
-# Some code adapted from
-# CodeHandBook at http://codehandbook.org/python-web-application-development-using-flask-and-mysql/
-# and MaxCountryMan at https://github.com/maxcountryman/flask-login/
-# and Flask Offical Tutorial at  http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
-# see links for further understanding
-###################################################
 
 import flask
 from flask import Flask, Response, request, render_template, redirect, url_for
@@ -17,7 +9,6 @@ from getuserinfo import main1
 from getusertweets import main2
 import json
 
-#for image uploading
 import os, base64
 
 app = Flask(__name__)
@@ -32,6 +23,8 @@ def twitter():
 	else:
 		if 'search' in request.form:
 			user = request.form.get('username')
+			if user == '':
+				return render_template('twitter.html', message='Welecome to twittersearch - please enter valid username')
 			f = main1(user)
 			loaded = json.loads(f)
 			uid = loaded['data'][0]['id']
@@ -43,6 +36,6 @@ def twitter():
 
 
 if __name__ == "__main__":
-	#this is invoked when in the shell  you run
+	#this is invoked when in the shell you run
 	#$ python app.py
 	app.run(port=5000, debug=True)
