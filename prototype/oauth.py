@@ -41,7 +41,7 @@ app.secret_key = API_SECRET1  # Added from settings doc
 # TO USE TWITTER OAUTH
 twitter_blueprint = make_twitter_blueprint(
     api_key=CONSUMER_KEY1, api_secret=CONSUMER_SECRET1)
-app.register_blueprint(twitter_blueprint, url_prefix='/authorized')
+app.register_blueprint(twitter_blueprint, url_prefix='/twitter_login') #MAKE /twitter_login from /authorized
 
 #FOR DATABASE:#######################################
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://{user}:{password}@{host}:3306/sqlalch".format(
@@ -75,7 +75,7 @@ twitter_blueprint.backend = SQLAlchemyStorage(
 
 
 # default page for searching users
-@app.route("/authorized", methods=['GET', 'POST'])
+@app.route("/authorized", methods=['GET', 'POST'])  #MIGHT NEED TO CHANGE !!!!!!!!!!!!!!!!
 def twitter1():
     if flask.request.method == 'GET':
         return render_template('twitter.html', message='Welecome to twittersearch')
@@ -94,14 +94,14 @@ def twitter1():
             return render_template('twitter.html', message='Welecome to twittersearch, search for '+user, tweets=loaded['data'][0], tweetlist=loaded2['data'])
 
 
-@app.route('/twitter_login')
+@app.route('/twitter')			#MAKE /twitter from /twitter_login
 def twitter_login():
     # if we are not logged in--> go to login page
     if not twitter.authorized:
         return redirect(url_for('twitter.login'))
         # SOME INDENTATION ERROR
-        account_info = twitter.get('account/settings.json')
-        account_info_json = account_info.json()
+    account_info = twitter.get('account/settings.json')
+    account_info_json = account_info.json()
     return '<h1> Your Twitter Name is @{}'.format(account_info_json['screen_name'])
 
 
