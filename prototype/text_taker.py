@@ -110,9 +110,17 @@ def choose_category(words):
             count[8] += 1
     print(count)
     max_value = max(count)
+    if max_value == 0:
+        return "NoCat"
     print(categories[count.index(max_value)])
+    return categories[count.index(max_value)]
 
 
-#
-list1 = get_tweets("shhmameron")
-choose_category(list1)
+def get_category(user):
+    list1 = get_tweets(user)
+    if not list1:
+        return "NoTweets"
+    return choose_category(list1)
+
+
+# print(get_category("Angela23283570"))
