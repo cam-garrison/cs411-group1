@@ -6,6 +6,6 @@ US1: Login into the app
 
 - Once they add their  information, either a successful login will occur which will lead to showing the app’s dashboard for that user, or an unsuccessful login will occur (US1.1).
 
-- Once the user has logged in successfully, the dashboard is displayed. The dashboard will show that user’s past activity in the app (recent friend picks/gift suggestions) as well as current “Trending” gifts across the app to choose from
+- Once the user has logged in successfully, the dashboard is displayed. The dashboard will show that user’s past activity in the app (recent friend picks/store suggestions)
 
-- There will also be a button to Start a New Friend Match, New Gift Match (for existing friend)  and Delete a Past Match.
+- There will also be a button to Start a New Friend Match, New Gift Match (for existing friend) and Delete a Past Match.
