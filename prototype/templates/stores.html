@@ -1,0 +1,28 @@
+<!doctype html>
+<title>Go check out these stores! </title>
+
+
+{% if message %}
+<h4>{{message}}!</h4>
+{% endif %}
+
+{% if stores %}
+
+{% for store in stores %}
+
+<li>
+    {{store['name']}} at {{store['formatted_address']}} <br> <br>
+</li>
+
+{% endfor %}
+{% endif %}
+
+
+<ul>
+    <li><a href='/'>Home</a></li>
+    <br>
+    <li><a href='/login'>Login</a></li>
+    <li><a href='/logout'>Logout</a></li>
+    <br>
+    <li><a href='/twitter'>Find gift stores</a></li>
+</ul>

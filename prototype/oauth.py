@@ -11,6 +11,7 @@
 
 ######
 # TO RUN SERVER do these
+# export OAUTHLIB_INSECURE_TRANSPORT=1
 # export FLASK_APP=oauth.py
 # export FLASK_ENV=development
 # python3 -m flask run
@@ -19,8 +20,8 @@
 import flask
 from flask import Flask, Response, request, render_template, redirect, url_for
 from datetime import datetime
-from getuserinfo import main1
-from getusertweets import main2
+from text_taker import get_category
+from get_stores import find_stores
 import json
 import twitter
 import os
@@ -41,7 +42,9 @@ app.secret_key = API_SECRET1  # Added from settings doc
 # TO USE TWITTER OAUTH
 twitter_blueprint = make_twitter_blueprint(
     api_key=CONSUMER_KEY1, api_secret=CONSUMER_SECRET1)
-app.register_blueprint(twitter_blueprint, url_prefix='/twitter_login') #MAKE /twitter_login from /authorized
+# MAKE /twitter_login from /authorized
+app.register_blueprint(
+    twitter_blueprint, url_prefix='/login')
 
 #FOR DATABASE:#######################################
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+mysqlconnector://{user}:{password}@{host}:3306/sqlalch".format(
@@ -75,33 +78,43 @@ twitter_blueprint.backend = SQLAlchemyStorage(
 
 
 # default page for searching users
-@app.route("/authorized", methods=['GET', 'POST'])  #MIGHT NEED TO CHANGE !!!!!!!!!!!!!!!!
-def twitter1():
+# MIGHT NEED TO CHANGE !!!!!!!!!!!!!!!!
+@app.route("/twitter", methods=['GET', 'POST'])
+def twitter():
     if flask.request.method == 'GET':
-        return render_template('twitter.html', message='Welecome to twittersearch')
+        return render_template('twitter.html', message="Enter your friend's twitter username and the city you are in and press go")
     else:
         if 'search' in request.form:
             user = request.form.get('username')
             if user == '':
-                return render_template('twitter.html', message='Welecome to twittersearch - please enter valid username')
-            f = main1(user)
-            loaded = json.loads(f)
-            uid = loaded['data'][0]['id']
-            print(uid)
-            tws = main2(uid)
-            loaded2 = json.loads(tws)
-            print(loaded2)
-            return render_template('twitter.html', message='Welecome to twittersearch, search for '+user, tweets=loaded['data'][0], tweetlist=loaded2['data'])
+                return render_template('twitter.html', message='Welecome to Gift Search - please enter valid username')
+            city = request.form.get('city')
+            if city == '':
+                return render_template('twitter.html', message='Welecome to Gift Search - please enter valid city')
+
+            category = get_category(user)
+            print(category)
+            if category == "NoTweets":
+                return render_template('twitter.html', message='We cannot access the tweets of this user - or they have no tweets. Try another username')
+            if category == "NoCat":
+                return render_template('twitter.html', message='This user does not have enough tweets for us to determine a gift category. Sorry')
+
+            searchstring = category + " stores in " + city
+            print(searchstring)
+            storeslist = find_stores(searchstring)
+
+            return render_template('stores.html', message='Here are some stores you could shop at', stores=storeslist)
 
 
-@app.route('/twitter')			#MAKE /twitter from /twitter_login
-def twitter_login():
+@app.route('/login')  # MAKE /twitter from /twitter_login
+def login():
     # if we are not logged in--> go to login page
-    if not twitter.authorized:
-        return redirect(url_for('twitter.login'))
-        # SOME INDENTATION ERROR
+
+    return redirect(url_for('twitter.login'))
+    # SOME INDENTATION ERROR
     account_info = twitter.get('account/settings.json')
     account_info_json = account_info.json()
+
     return '<h1> Your Twitter Name is @{}'.format(account_info_json['screen_name'])
 
 
@@ -129,16 +142,15 @@ def twitter_logged_in(blueprint, token):
 
 
 @app.route('/')
-@login_required
 def index():
-    return '<h1> You are logged in as {}</h1>'.format(current_user.username)
+
+    return render_template('home.html')
 
 
 @app.route('/logout')
-@login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return render_template('home.html', message='Logged out')
 
 
 if __name__ == "__main__":
