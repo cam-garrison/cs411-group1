@@ -20,6 +20,12 @@ a, a:visited, a:hover {
     text-decoration: none;
 }
 
+//Spacing Padding
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 //Flexbox styles
 .flex {
     display: flex;
@@ -31,5 +37,41 @@ a, a:visited, a:hover {
     }
     &-ai-c {
         align-items: center;
+    }
+    &-jc-r {
+        justify-content: right;
+    }
+}
+
+//Buttons
+button, .button {
+    padding: 1.125rem;
+    border-radius: 32px;
+    cursor: pointer;
+    background-color: $twitterBlue;
+    border: 0;
+    color: $white;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+button:hover, .button:hover {
+    background-color: $cerulean;
+    color: $white;
+}
+
+//Visibility
+.hide-for-mobile {
+    //hide for tablet and mobile
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    //hide for desktop vw
+    @include breakpoint-up(large){
+        display: none;
     }
 }
