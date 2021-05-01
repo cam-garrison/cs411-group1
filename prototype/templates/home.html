@@ -19,33 +19,46 @@
 
 <body>
 
-    <!-- navbar -->
-    <nav class="navbar">
-
-    </nav>
-
-    <h1>Welcome to the Tweet Store!</h1>
-
-    {% if message %}
-    <h4>{{message}}!</h4>
-    {% endif %}
-
-    <a id="twitter-button" class="btn btn-block btn-social btn-twitter">
-        <i class="fa fa-twitter"></i> Sign in with Twitter
-    </a>
-
-    <script src="/templates/js/logintwitter.js"></script>
-
-    <p>Text.</p>
-
-    <ul>
-        <li><a href='/'>Home</a></li>
-        <br>
-        <li><a href='/login'>Login</a></li>
-        <li><a href='/logout'>Logout</a></li>
-        <br>
-        <li><a href='/twitter'>Find gift stores</a></li>
-    </ul>
+    <header class="header">
+        <!-- hero div -->
+        <div class="hero__content">
+            <div class="header__box1">
+                <!-- nav bar -->
+                <nav class="flex flex-jc-sb flex-ai-c">
+                    <a href="#" class="header__logo">
+                        <img src="images/logowtext.png" alt="Tweet Store">
+                    </a>
+            
+                </nav>
+                <h1>Find the perfect gift for the perfect people!</h1>
+                <div class="header__imgContainer" id="imagesToUse">
+                    <img src="images/gift1.svg">
+                    <img src="images/gift2.svg">
+                    <img src="images/gift3.svg">
+                    <img src="images/gift4.svg">
+                    <img src="images/gift5.svg">
+                    <script>
+                        var crossfade = document.getElementById("imagesToUse");
+                        setInterval(function() {
+                            var topImg = crossfade.firstChild;
+                            crossfade.appendChild(topImg);
+                        },3000);
+                    </script>
+                </div>
+            </div>
+            
+            <div class="header__box2">
+                <ul>
+                    <li><a href='/'>Home</a></li>
+                    <br>
+                    <li><a href='/login'>Login</a></li>
+                    <li><a href='/logout'>Logout</a></li>
+                    <br>
+                    <li><a href='/twitter'>Find gift stores</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 </body>
     
 </html>

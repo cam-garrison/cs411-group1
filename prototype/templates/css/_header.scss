@@ -1,0 +1,66 @@
+.header {
+    
+    nav {
+        padding-bottom: 38px;
+    }
+
+    &__logo {
+
+        img {
+            width: 308px;
+            height: 84px;
+        }
+    }
+
+    display: grid;
+    grid-template-areas: "hero";
+    color: $white;
+
+    &__box1 {
+        position: absolute;
+        width: 564px;
+        height: 100vh;
+        left: 0px;
+        top: 0px;
+        background: $cerulean;
+        padding: 38px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    &__imgContainer {
+        position: relative;
+        width: 496px;
+        height: 566px;
+    }
+
+    &__imgContainer img {
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    &__imgContainer img:first-child {
+        opacity: 1;
+    }
+
+    &__imgContainer img:last-child {
+        opacity: 0;
+    }
+
+    &__imgContainer img:first-child {
+        transition: opacity 1s ease;
+        z-index: 2;
+    }
+
+
+
+    &__box2 {
+        position: absolute;
+        width: 876px;
+        height: 100vh;
+        left: 564px;
+        top: 0px;
+        background: $white;
+    }
+}
