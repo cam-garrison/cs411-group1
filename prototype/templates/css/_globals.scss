@@ -14,6 +14,30 @@ body {
     font-size: $font-med;
     color: $cerulean;
     line-height: 1.3;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: $white;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: $black;
+    font-size: 2.5rem;
+    margin-bottom: 2.1875rem;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+    color: $cerulean;
+    font-size: $font-med;
+    margin-bottom: 1.5625rem;
 }
 
 a, a:visited, a:hover {

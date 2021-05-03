@@ -1,7 +1,6 @@
 .header {
     
     display: grid;
-    color: $white;
     
     nav {
         padding-top: 1.5rem;
@@ -67,10 +66,17 @@
         }
     }
 
+    // nav cta button
     &__cta {
         font-size: $font-med;
         color: $white;
         margin-left: 3rem;
+    }
+
+    // body cta button
+    &__ctaBody {
+        font-size: $font-med;
+        color: $white;
     }
 
     // left box
@@ -82,7 +88,6 @@
         top: 0px;
         background: $cerulean;
         padding: 38px;
-        font-family: 'Poppins', sans-serif;
     }
 
     &__imgContainer {
@@ -124,6 +129,14 @@
         top: 0px;
         padding: 38px;
         background: $white;
+    }
+
+    .hero {
+        padding: 1.5rem;
+
+        &__button {
+            padding-top: 1.5625rem;
+        }
     }
 
     // hamburger animation

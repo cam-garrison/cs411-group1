@@ -25,11 +25,11 @@
             <!-- nav bar -->
             <nav class="flex flex-jc-sb flex-ai-c">
 
-                <a href="#" class="header__logo hide-for-mobile">
+                <a href="/" class="header__logo hide-for-mobile">
                     <img src="images/logowtext.png" alt="Tweet Store">
                 </a>
 
-                <a href="#" class="header__logo hide-for-desktop">
+                <a href="/" class="header__logo hide-for-desktop">
                     <img src="images/logo 50x50.png" alt="Tweet Store Icon">
                 </a>
     
@@ -69,20 +69,34 @@
 
             </nav>
             <div class="header__menu hasFade hide-for-desktop">
-                <a href="">How It Works</a>
-                <a href="">Who We Are</a>
+                <a href="#">How It Works</a>
+                <a href="#">Who We Are</a>
             </div>
-            <ul>
-                <li><a href='/'>Home</a></li>
-                <br>
-                <li><a href='/login'>Login</a></li>
+
+            <section class="hero">
+                <div class="hero__text">
+                    <h2>
+                        The gift that keeps on giving.
+                    </h2>
+                    <p>
+                        Struggling with a birthday gift, searching for a wedding gift, perhaps in need of anniversary gift? You have no clue where to start and that’s okay!
+                    </p>
+                    <p>
+                        Welcome to the Tweet Store, your one-stop-shop that'll make your gift shopping a whole lot tweeter! Tweet Store is a web app that allows users to generate a list of stores based on Tweets pulled from a valid Twitter account. Just sign in with a Twitter account, enter in the Twitter account of the person you are searching a gift for, and let Tweet Store do the work. We’ll find you stores near you to start your search.
+                    </p>
+                    <div class="hero__button">
+                        <a href="/login" class="button header__ctaBody">Start The Search</a>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- <ul>
                 <li><a href='/logout'>Logout</a></li>
                 <br>
                 <li><a href='/twitter'>Find gift stores</a></li>
-            </ul>
+            </ul> -->
         </div>
-
-
     </header>
     <script src="/prototype/templates/js/script.js"></script>
 </body>
