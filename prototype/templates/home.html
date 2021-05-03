@@ -70,7 +70,7 @@
                     <a href="#">Who We Are</a>
                 </div>
 
-                <a href="#" class="button header__cta hide-for-mobile">Start The Search</a>
+                <a href="/login" class="button header__cta hide-for-mobile">Login</a>
 
             </nav>
             <div class="header__menu hasFade hide-for-desktop">
@@ -93,22 +93,27 @@
                         pulled from a valid Twitter account. Just sign in with a Twitter account, enter in the Twitter
                         account of the person you are searching a gift for, and let Tweet Store do the work. We’ll find
                         you stores near you to start your search.
+                        <ol>
+                            <li>Hit Login in the top right!</li>
+                            <li>Click Start The Search!</li>
+                            <li>Enter in the friend's Twitter and your city.</li>
+                        </ol>
                     </p>
-                    {% if message %}
-                    <b>{{message}}!</b>
-                    {% endif %}
                     <div class="hero__button">
-                        <a href="/login" class="button header__ctaBody">Start The Search</a>
+                        <a href="/twitter" class="button header__ctaBody">Start The Search</a>
                     </div>
                 </div>
             </section>
 
+            <section class="logout">
+                <a href="/logout">Logout</a>
+                <p>
+                    {% if message %}
+                    <b>{{message}}!</b>
+                    {% endif %}
+                </p>
+            </section>
 
-            <!-- <ul>
-                <li><a href='/logout'>Logout</a></li>
-                <br>
-                <li><a href='/twitter'>Find gift stores</a></li>
-            </ul> -->
         </div>
     </header>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>

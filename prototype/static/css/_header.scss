@@ -72,6 +72,8 @@
         font-size: $font-med;
         color: $white;
         margin-left: 3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     // body cta button
@@ -141,6 +143,11 @@
         &__button {
             padding-top: 1.5625rem;
         }
+    }
+
+    .logout {
+        padding: 1.5rem;
+        padding-top: 15rem;
     }
 
     // hamburger animation
