@@ -103,8 +103,11 @@ def twitter():
             searchstring = category + " stores in " + city
             print(searchstring)
             storeslist = find_stores(searchstring)
+            print(' ')
+            print(' ')
+            print(storeslist[0])
 
-            return render_template('stores.html', message='Here are some stores you could shop at', stores=storeslist)
+            return render_template('stores.html', message='Here are some stores you could shop at', stores=storeslist, category=category)
 
 
 @app.route('/login')  # MAKE /twitter from /twitter_login
