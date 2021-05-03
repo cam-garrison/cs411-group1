@@ -35,6 +35,7 @@
 
     <section class="searchbar">
         <div class="searchbar__padding">
+
             <div class="searchbar__header">
                 <h1>
                     <span class="blueHighlight">Alright, who's the lucky Tweeter?</span>
@@ -43,16 +44,27 @@
                     Drop their Twitter handle and your city so we can get shopping!
                 </p>
             </div>
+
             <div id="content" class="searchbar__form">
                 <form method="post" action="{{ url_for('twitter' )}}">
-                    <label for="username">Enter the username:</label>
-                    <input type="username" name="username" />
-                    <br>
-                    <br>
-                    <label for="city">Enter the city:</label>
-                    <input type="city" name="city" />
-                    <br>
-                    <input type="submit" , name="search" , value="Go!!" />
+
+                    <div class="inputContainer">
+                        <div class="icon">
+                            <span class="iconify" data-inline="false" data-icon="mdi:account-circle"></span>
+                        </div>
+                        <!-- <label for="username">Enter the username:</label> -->
+                        <input class="inputField" type="text" placeholder="Enter Friend's Username" name="username">
+                    </div>
+
+                    <div class="inputContainer">
+                        <div class="icon">
+                            <span class="iconify" data-inline="false" data-icon="mdi:map-marker"></span>
+                        </div>
+                        <!-- <label for="city">Enter the city:</label> -->
+                        <input class="inputField" type="text" placeholder="Enter Your City" name="city">
+                    </div>
+
+                    <input class="inputButton" type="submit" name="search" value="Go!!">
                 </form>
             </div>
 
@@ -60,4 +72,6 @@
 
     </section>
 
+    <!-- iconify plugin -->
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>

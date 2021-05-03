@@ -68,6 +68,52 @@
   font-weight: 700;
   font-style: italic;
   text-shadow: 2px 2px 15px #1DA1F2;
+  margin-bottom: 2.375rem;
+}
+
+.searchbar__form .inputContainer {
+  display: flex;
+  width: 80vw;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+  padding: 0.625rem;
+  background-color: #1DA1F2;
+  border-radius: 2rem;
+}
+
+.searchbar__form .icon {
+  padding-top: 0.2rem;
+}
+
+.searchbar__form .iconify {
+  color: #FFFFFF;
+  font-size: 36px;
+}
+
+.searchbar__form .inputField {
+  width: 100%;
+  padding: .625rem;
+  border: none;
+  outline: none;
+  background-color: #1DA1F2;
+  color: #FFFFFF;
+}
+
+.searchbar__form .inputButton {
+  width: 8.5rem;
+  height: 4rem;
+  border-radius: 2rem;
+  background-color: #1DA1F2;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+}
+
+.searchbar__form .inputButton:hover {
+  background-color: #0E6394;
+  transition: 0.3s;
 }
 
 html {
