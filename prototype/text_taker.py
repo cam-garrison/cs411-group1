@@ -3,7 +3,6 @@ from nltk.stem.snowball import SnowballStemmer
 import snscrape.modules.twitter as sntwitter
 import string
 
-
 Sports = ['footbal', 'soccer', 'hockey', 'basketbal', 'basebal', 'mlb', 'mlh',
           'mls', 'nba', 'nfl', 'golf', 'pga', 'tenni', 'world', 'cup', 'fifa', 'olymp', 'team', 'sport', 'espn']
 

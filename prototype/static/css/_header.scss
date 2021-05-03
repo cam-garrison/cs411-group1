@@ -1,0 +1,180 @@
+.header {
+    
+    display: grid;
+    padding: 1.5rem;
+    
+    nav {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    &__logo {
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        z-index: 4;
+    }
+
+    // mobile menu
+    &__toggle {
+        z-index: 4;
+        > span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $cerulean;
+            transition: all 300ms ease-in-out;
+            transform-origin: 3px 1px;
+            
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+
+    }
+
+    &__menu {
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $white;
+        padding: 1.625rem;
+        border-radius: 4px;
+        z-index: 4;
+        margin-top: 1.5rem;
+        a {
+            display: block;
+            padding: 0.625rem;
+            color: $cerulean;
+            text-align: center;
+        }
+    }
+
+
+    // desktop menu
+    &__links {
+        a {
+            font-size: $font-med;
+            color: $cerulean;
+
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+        }
+    }
+
+    // nav cta button
+    &__cta {
+        font-size: $font-med;
+        color: $white;
+        margin-left: 3rem;
+    }
+
+    // body cta button
+    &__ctaBody {
+        font-size: $font-med;
+        color: $white;
+    }
+
+    // left box
+    &__box1 {
+        position: absolute;
+        width: 30%;
+        height: 100vh;
+        left: 0px;
+        top: 0px;
+        background: $cerulean;
+        padding-left: 2.375rem;
+        padding-right: 2.375rem;
+    }
+
+    &__imgContainer {
+        position: relative;
+        width: 96%;
+        max-width: 496px;
+        margin: 0 auto;
+    }
+
+    &__imgContainer img {
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    &__imgContainer img:first-child {
+        opacity: 1;
+    }
+
+    &__imgContainer img:last-child {
+        opacity: 0;
+    }
+
+    &__imgContainer img:first-child {
+        transition: opacity 1s ease;
+        z-index: 2;
+    }
+
+
+    // right box
+    &__box2 {
+        position: absolute;
+        width: 70%;
+        height: 100vh;
+        background: $white;
+        left: 30%;
+        top: 0px;
+        padding-left: 2.375rem;
+        padding-right: 2.375rem;
+    }
+
+    .hero {
+        padding: 1.5rem;
+        padding-right: 10rem;
+
+        &__button {
+            padding-top: 1.5625rem;
+        }
+    }
+
+    // hamburger animation
+    &.open {
+        .header__toggle {
+            > span {
+                background-color: $white;
+            }
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    // for twitter.html
+    &__box3 {
+        padding-left: 0.9rem;
+        padding-right: 2.375rem;
+    }
+}
+
+.overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-image: linear-gradient($cerulean, transparent);
+
+}

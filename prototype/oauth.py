@@ -79,10 +79,11 @@ twitter_blueprint.backend = SQLAlchemyStorage(
 
 # default page for searching users
 # MIGHT NEED TO CHANGE !!!!!!!!!!!!!!!!
+@login_required
 @app.route("/twitter", methods=['GET', 'POST'])
 def twitter():
     if flask.request.method == 'GET':
-        return render_template('twitter.html', message="Enter your friend's twitter username and the city you are in and press go")
+        return render_template('twitter.html')
     else:
         if 'search' in request.form:
             user = request.form.get('username')
