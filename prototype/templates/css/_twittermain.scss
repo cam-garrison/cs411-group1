@@ -1,0 +1,29 @@
+.searchbar {
+    background-image: url("/prototype/templates/images/openshop.png");
+    width: 100%;
+    height: 38rem;
+    background-color: $cerulean;
+
+    span.blueHighlight {
+        background-color: $twitterBlue;
+    }
+
+    &__padding {
+        padding: 2.375rem;
+    }
+
+    &__header {
+        padding-top: 5rem;
+    }
+
+    &__subtitle {
+        color: $white;
+        font-weight: 700;
+        font-style: italic;
+        text-shadow: 2px 2px 15px $twitterBlue;
+    }
+
+    &__form {
+        
+    }
+}

@@ -44,6 +44,32 @@
   animation: fadeOut 250ms ease-in-out forwards;
 }
 
+.searchbar {
+  background-image: url("/prototype/templates/images/openshop.png");
+  width: 100%;
+  height: 38rem;
+  background-color: #0E6394;
+}
+
+.searchbar span.blueHighlight {
+  background-color: #1DA1F2;
+}
+
+.searchbar__padding {
+  padding: 2.375rem;
+}
+
+.searchbar__header {
+  padding-top: 5rem;
+}
+
+.searchbar__subtitle {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 2px 2px 15px #1DA1F2;
+}
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -64,6 +90,12 @@ body {
 
 body.noscroll {
   overflow: hidden;
+}
+
+body .fullBlue {
+  width: 100%;
+  height: 100%;
+  background-color: #0E6394;
 }
 
 h1 {
@@ -146,6 +178,7 @@ button:hover, .button:hover {
 
 .header {
   display: grid;
+  padding: 1.5rem;
 }
 
 .header nav {
@@ -226,7 +259,8 @@ button:hover, .button:hover {
   left: 0px;
   top: 0px;
   background: #0E6394;
-  padding: 38px;
+  padding-left: 2.375rem;
+  padding-right: 2.375rem;
 }
 
 .header__imgContainer {
@@ -262,14 +296,16 @@ button:hover, .button:hover {
   position: absolute;
   width: 70%;
   height: 100vh;
+  background: #FFFFFF;
   left: 30%;
   top: 0px;
-  padding: 38px;
-  background: #FFFFFF;
+  padding-left: 2.375rem;
+  padding-right: 2.375rem;
 }
 
 .header .hero {
   padding: 1.5rem;
+  padding-right: 10rem;
 }
 
 .header .hero__button {
@@ -290,6 +326,11 @@ button:hover, .button:hover {
 
 .header.open .header__toggle > span:last-child {
   transform: rotate(-45deg);
+}
+
+.header__box3 {
+  padding-left: 0.9rem;
+  padding-right: 2.375rem;
 }
 
 .overlay {

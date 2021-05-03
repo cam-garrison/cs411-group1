@@ -1,6 +1,7 @@
 .header {
     
     display: grid;
+    padding: 1.5rem;
     
     nav {
         padding-top: 1.5rem;
@@ -87,7 +88,8 @@
         left: 0px;
         top: 0px;
         background: $cerulean;
-        padding: 38px;
+        padding-left: 2.375rem;
+        padding-right: 2.375rem;
     }
 
     &__imgContainer {
@@ -125,14 +127,16 @@
         position: absolute;
         width: 70%;
         height: 100vh;
+        background: $white;
         left: 30%;
         top: 0px;
-        padding: 38px;
-        background: $white;
+        padding-left: 2.375rem;
+        padding-right: 2.375rem;
     }
 
     .hero {
         padding: 1.5rem;
+        padding-right: 10rem;
 
         &__button {
             padding-top: 1.5625rem;
@@ -155,6 +159,12 @@
                 transform: rotate(-45deg);
             }
         }
+    }
+
+    // for twitter.html
+    &__box3 {
+        padding-left: 0.9rem;
+        padding-right: 2.375rem;
     }
 }
 
