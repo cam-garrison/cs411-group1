@@ -1,11 +1,11 @@
 .header {
-    
+
     display: grid;
     padding: 1.5rem;
     
     nav {
         padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1.5 rem;
         font-weight: 700;
     }
 
@@ -45,12 +45,11 @@
         padding: 1.625rem;
         border-radius: 4px;
         z-index: 4;
-        margin-top: 1.5rem;
+        margin-top:1.5 rem;
         a {
             display: block;
             padding: 0.625rem;
             color: $cerulean;
-            text-align: center;
         }
     }
 
@@ -82,6 +81,10 @@
         color: $white;
     }
 
+    &__align {
+        text-align: justify;
+    }
+    
     // left box
     &__box1 {
         position: absolute;
@@ -172,13 +175,15 @@
     &__box4 {
         position: absolute;
         width: 100%;
-        height: 20vh;
-        left: 0px;
-        top: 0px;
+        height: 28vh;
         background: $cerulean;
-        padding-left: 2.375rem;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        text-align: justify;
+        text-justify: inter-word;
         padding-right: 2.375rem;
     }
+
 }
 
 .overlay {

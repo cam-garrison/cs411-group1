@@ -8,6 +8,7 @@
         "_animations.scss",
         "_twittermain.scss",
         "_globals.scss",
+        "_storemain.scss",
         "_header.scss"
     ],
     "names": [],

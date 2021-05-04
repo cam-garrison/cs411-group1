@@ -115,7 +115,7 @@
   background-color: #0E6394;
   transition: 0.3s;
 }
-
+.header
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -148,6 +148,8 @@ h1 {
   font-family: 'Poppins', sans-serif;
   color: #FFFFFF;
   font-size: 2.5rem;
+  text-align: center;
+  
 }
 
 h2 {
@@ -310,6 +312,10 @@ button:hover, .button:hover {
   padding-left: 2.375rem;
   padding-right: 2.375rem;
 }
+.header__box4 {
+  width: 100%;
+  height: 27vh;
+}
 
 .header__imgContainer {
   position: relative;
@@ -380,7 +386,9 @@ button:hover, .button:hover {
   padding-left: 0.9rem;
   padding-right: 2.375rem;
 }
-
+.header__align {
+  text-align: justify;
+}
 .overlay {
   opacity: 0;
   position: fixed;
