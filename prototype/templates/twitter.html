@@ -86,29 +86,13 @@
     <!-- iconify plugin -->
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
+    <!-- Found out Google costs money -->
     <!-- function to call google places api city search -->
-    <script>
-        let autoComplete;
-        function activatePlacesSearch() {
-            autoComplete = new google.maps.places.Autocomplete(document.getElementById('searchTerm'));
-            autoComplete.addListener('placeChanged', onPlaceChanged);
-        }
-        function onPlaceChanged() {
-            var place = autoComplete.getPlace();
-
-            if (!place.geometry) {
-                // no prediction selected; reset input field
-                document.getElementById('searchTerm').placeholder = 'Enter a place';
-            } else {
-                // display details about valid place
-                document.getElementById('details').innerHTML = place.name;
-            }
-        }
-    </script>
-
+    <!-- <script src="/prototype/templates/js/googleplaces.js"></script> -->
+    
     <!-- google places api autocomplete city search -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOJc6ojNkpO2DSpLYw-MqN7GpaVOqobZs&libraries=places&callback=activatePlacesSearch">
-    </script>
+    <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOJc6ojNkpO2DSpLYw-MqN7GpaVOqobZs&libraries=places&callback=activatePlacesSearch" async defer>
+    </script> -->
     
 </body>
