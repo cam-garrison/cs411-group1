@@ -2,6 +2,23 @@
   visibility: hidden;
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
+  }
+}
+
 @keyframes fadeIn {
   from {
     visibility: hidden;
@@ -20,7 +37,25 @@
 }
 
 .fadeIn {
-  animation: fadeIn 250ms ease-in-out forwards;
+  -webkit-animation: fadeIn 250ms ease-in-out forwards;
+          animation: fadeIn 250ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
 }
 
 @keyframes fadeOut {
@@ -41,7 +76,8 @@
 }
 
 .fadeOut {
-  animation: fadeOut 250ms ease-in-out forwards;
+  -webkit-animation: fadeOut 250ms ease-in-out forwards;
+          animation: fadeOut 250ms ease-in-out forwards;
 }
 
 .backgroundImg {
@@ -87,7 +123,8 @@
 }
 
 .backgroundImg .showStores .card {
-  box-shadow: 0px 5px 15px rgba(14, 99, 148, 0.3);
+  -webkit-box-shadow: 0px 5px 15px rgba(14, 99, 148, 0.3);
+          box-shadow: 0px 5px 15px rgba(14, 99, 148, 0.3);
   padding: 1rem;
   text-align: center;
   margin-bottom: 1.125rem;
@@ -132,6 +169,8 @@
 }
 
 .searchbar__form .inputContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 80vw;
   height: 4rem;
@@ -173,6 +212,7 @@
 
 .searchbar__form .inputButton:hover {
   background-color: #0E6394;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -186,11 +226,13 @@
 
 html {
   font-size: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
@@ -255,23 +297,33 @@ a, a:visited, a:hover {
 }
 
 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .flex-jc-sb {
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .flex-jc-c {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flex-ai-c {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .flex-jc-r {
-  justify-content: right;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
 button, .button {
@@ -283,6 +335,7 @@ button, .button {
   color: #FFFFFF;
   font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -304,6 +357,7 @@ button:hover, .button:hover {
 }
 
 .header {
+  display: -ms-grid;
   display: grid;
   padding: 1.5rem;
 }
@@ -332,8 +386,10 @@ button:hover, .button:hover {
   width: 26px;
   height: 2px;
   background-color: #0E6394;
+  -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
-  transform-origin: 3px 1px;
+  -webkit-transform-origin: 3px 1px;
+          transform-origin: 3px 1px;
 }
 
 .header__toggle > span:not(:last-child) {
@@ -344,7 +400,8 @@ button:hover, .button:hover {
   position: absolute;
   width: calc(100% - 3rem);
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   background-color: #FFFFFF;
   padding: 1.625rem;
   border-radius: 4px;
@@ -401,7 +458,9 @@ button:hover, .button:hover {
 
 .header__imgContainer img {
   position: absolute;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: auto;
   opacity: 0;
@@ -417,6 +476,7 @@ button:hover, .button:hover {
 }
 
 .header__imgContainer img:first-child {
+  -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
   z-index: 2;
 }
@@ -451,7 +511,8 @@ button:hover, .button:hover {
 }
 
 .header.open .header__toggle > span:first-child {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .header.open .header__toggle > span:nth-child(2) {
@@ -459,7 +520,8 @@ button:hover, .button:hover {
 }
 
 .header.open .header__toggle > span:last-child {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header__box3 {
@@ -474,6 +536,7 @@ button:hover, .button:hover {
   bottom: 0px;
   left: 0px;
   right: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0E6394), to(transparent));
   background-image: linear-gradient(#0E6394, transparent);
 }
 /*# sourceMappingURL=home.css.map */
