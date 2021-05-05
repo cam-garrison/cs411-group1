@@ -2,6 +2,14 @@
 
 Tweet Store is an app that pulls tweets from a friend and recommends stores perfect for gift shopping.
 
+## Video Link
+
+https://www.youtube.com/watch?v=q4ozKM1QuSc
+
+## Note for Graders
+
+The code can all be found in the prototype folder - the main backend file is oauth.py - which uses functions from other python files to perform most API calls. 
+
 ## Inspiration
 
 The idea for Tweet Store arose from several initial ideas that had come together. Narrowing our brainstorming session into two ideas (Hum Guessing similar to Shazam and a Gift Matching App), we proceeded with the latter given the feasibility of the project both in terms of APIs to use and scope of the class. In an age where getting gift cards are just a sign of laziness and not knowing where to start comes as a result of wanting get something "more", Tweet Store is the place to start!
