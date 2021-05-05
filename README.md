@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=q4ozKM1QuSc
 
 ## Note for Graders
 
-The code can all be found in the prototype folder - the main backend file is oauth.py - which uses functions from other python files to perform most API calls. 
+The code can all be found in the prototype folder - the main backend file is oauth.py - which uses functions from other python files to perform most API calls. The html files can be found in prototype/templates and the css code / static images can be found in prototype/static. 
 
 ## Inspiration
 
