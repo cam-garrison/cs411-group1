@@ -1,0 +1,64 @@
+.backgroundImg {
+
+    height: 608px;
+    background-color: $googleYellow;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .messages {
+        .category {
+            padding: 2.375rem;
+
+            span.blueHighlight {
+                background-color: $twitterBlue;
+            }
+
+        }
+    }
+
+    .showStores {
+        padding: 2.375rem;
+        .col {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        .row {
+            margin: 0 0px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 600px) {
+            .col {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        .card {
+            box-shadow: 0px 5px 15px rgba(14, 99, 148, 0.3);
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1.125rem;    
+        }
+    }
+
+    .otherBtns {
+        padding: 2.375rem;
+
+        .newSearch {
+            width: 100%;
+
+            &__btn {
+                display: inline-block;
+            }
+        }
+    }
+}
